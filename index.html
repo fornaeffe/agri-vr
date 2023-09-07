@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+		<title>Agri VR</title>
+		<style>
+			body { 
+				margin: 0;
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>Agri VR</h1>
+		<div class='subtitle'>Esperienze in realtà virtuale per istituti tecnici agrari</div>
+
+		<div id='topo' class='title'>
+			<h2>Topografia</h2>
+			<div>Dopo aver eseguito un rilievo topografico, carica il file del modello digitale del terreno per visualizzarlo in VR:</div>
+			<input type="file" id="dem_file" accept=".tif"/>
+			<div>Dopo aver eseguito una foto aerea dell'area tramite drone, carica la foto:</div>			
+			<input type="file" id="orto_file"/>
+		</div>
+
+		<div id='genio' class='title'>
+			<h2>Genio rurale</h2>
+			<div>Dopo aver realizzato il progetto tridimensionale della stalla, caricalo per poterlo piazzare sul terreno</div>			
+			<input type="file" id="genio_file" accept=".glb"/>
+		</div>
+
+		<div id='pv' class='title'>
+			<h2>Produzioni vegetali</h2>
+			<div>Simula la potatura degli alberi da frutto nell'azienda agricola che hai costruito nelle precedenti attività</div>
+		</div>
+
+		<div id='pa' class='title'>
+			<h2>Produzioni animali</h2>
+			<div>Simula interventi veterinari nell'azienda agricola che hai costruito nelle precedenti attività</div>
+		</div>
+
+		<div id='viewer'></div>
+
+		<script src="script/bundle.js"></script>
+	</body>
+</html>
