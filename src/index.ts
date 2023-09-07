@@ -5,10 +5,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { ExtendedController } from './ExtendedController';
 
-
-
-
-
 // Create the scene
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x87ceeb)
@@ -76,9 +72,7 @@ async function loadDEM(file: File) {
     terrainMesh.translateY(- intersections[0].point.y)
 }
 
-// Create the camera
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10000 );
-camera.position.set(0, 0, 2)
+
 
 // Function that loads ortophoto
 const ortoFileInput = document.getElementById('orto_file') as HTMLInputElement
@@ -123,10 +117,36 @@ scene.add( directionalLight );
 const light = new THREE.AmbientLight( 0x404040 ); // soft white light
 scene.add( light );
 
+// Create the camera
+const camera = new THREE.PerspectiveCamera( 75, 1, 0.1, 10000 );
+camera.position.set(0, 0, 2)
+
+function resize() {	
+    let width = 100
+    let height = 100
+    const aspectRatioWindow = window.innerWidth / window.innerHeight
+    if (aspectRatioWindow < 1) {
+        width = window.innerWidth
+        height = window.innerWidth
+    } else {
+        width = window.innerWidth / 2
+        height = window.innerHeight
+    }
+    		
+    const aspect_ratio = width / height
+    renderer.setSize( width, height )
+    camera.aspect = aspect_ratio
+    camera.updateProjectionMatrix()
+}
+
 // Create the renderer and enable XR
+
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
+resize()
+window.addEventListener('resize', () => resize())
 renderer.xr.enabled = true;
+
+
 
 // Orbit Controls
 const controls = new OrbitControls( camera, renderer.domElement );
@@ -208,8 +228,8 @@ controllers.forEach((c) => {
 
 
 // Append the renderer and the VR button to the page
-document.body.appendChild( renderer.domElement );
-document.body.appendChild( VRButton.createButton( renderer ) );
+document.getElementById('viewer')!.appendChild( renderer.domElement );
+document.getElementById('viewer')!.appendChild( VRButton.createButton( renderer ) );
 
 // Rendering loop
 function render() {  
