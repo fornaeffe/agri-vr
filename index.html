@@ -4,14 +4,17 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
 		<title>Agri VR</title>
-		<link rel="stylesheet" href="style/theme.css" />
+		<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  		<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+		  <link rel="stylesheet" href="style/style.css">
 	</head>
 	<body>
-		<div id="instructions" class="part body-medium">
-			<div class='display-medium'>Agri VR</div>
-			<div class='headline-small'>Esperienze in realtà virtuale per istituti tecnici agrari</div>
+		<div id="instructions" class="part">
+			<div>Agri VR</div>
+			<div>Esperienze in realtà virtuale per istituti tecnici agrari</div>
 			<div class='cardlist'>
-				<div id='topo' class='card'>
+				<div id='topo' class='mdc-card'>
 					<div class='display-small'>Topografia</div>
 					<div>Dopo aver eseguito un rilievo topografico, carica il file del modello digitale del terreno per visualizzarlo in VR:</div>
 					<input type="file" id="dem_file" accept=".tif"/>
@@ -19,18 +22,18 @@
 					<input type="file" id="orto_file"/>
 				</div>
 		
-				<div id='genio' class='card'>
+				<div id='genio' class='mdc-card'>
 					<div class='display-small'>Genio rurale</div>
 					<div>Dopo aver realizzato il progetto tridimensionale della stalla, caricalo per poterlo piazzare sul terreno</div>			
 					<input type="file" id="genio_file" accept=".glb"/>
 				</div>
 		
-				<div id='pv' class='card'>
+				<div id='pv' class='mdc-card'>
 					<div class='display-small'>Produzioni vegetali</div>
 					<div>Simula la potatura degli alberi da frutto nell'azienda agricola che hai costruito nelle precedenti attività</div>
 				</div>
 		
-				<div id='pa' class='card'>
+				<div id='pa' class='mdc-card'>
 					<div class='display-small'>Produzioni animali</div>
 					<div>Simula interventi veterinari nell'azienda agricola che hai costruito nelle precedenti attività</div>
 				</div>
