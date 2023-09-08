@@ -1,0 +1,45 @@
+@import url(tokens.css);
+@import url(colors.module.css);
+@import url(typography.module.css);
+@import url(theme.light.css) (prefers-color-scheme: light);
+@import url(theme.dark.css) (prefers-color-scheme: dark);
+
+body { 
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+}
+
+.cardlist {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.card {
+    border-radius: var(--md-sys-shape-corner-medium);
+    background-color: var(--md-sys-color-surface-container-highest);
+    padding: 16px;
+    color: var(--md-sys-color-on-surface);
+}
+
+.part {
+    width: 100%;
+}
+
+#instructions {
+    padding: 8px;
+}
+
+#viewer {
+    position: relative;
+}
+
+@media (orientation: landscape) {
+    body { flex-direction: row; }
+    .part {
+        width: 50%;
+    }
+}
