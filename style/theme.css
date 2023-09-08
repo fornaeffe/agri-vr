@@ -1,0 +1,68 @@
+@import url(tokens.css);
+@import url(colors.module.css);
+@import url(typography.module.css);
+@import url(theme.light.css) (prefers-color-scheme: light);
+@import url(theme.dark.css) (prefers-color-scheme: dark);
+
+:root {
+    --md-icon-font: 'Material Symbols Sharp';
+}
+
+body { 
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+}
+
+.part {
+    width: 100%;
+}
+
+#instructions {
+    padding: 8px;
+}
+
+.header {
+    padding: 16px;
+}
+
+.cardlist {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.card {
+    border-radius: var(--md-sys-shape-corner-medium);
+    background-color: var(--md-sys-color-surface-variant);
+    /* background-color: var(--md-sys-color-surface-container-highest); */
+    padding: 16px;
+    color: var(--md-sys-color-on-surface);
+}
+
+.body-medium {
+    margin: 16px 0 8px 0;
+}
+
+.errore {
+    color: var(--md-sys-color-error);
+}
+
+input {
+    display: none;
+}
+
+
+
+#viewer {
+    position: relative;
+}
+
+@media (orientation: landscape) {
+    body { flex-direction: row; }
+    .part {
+        width: 50%;
+    }
+}
