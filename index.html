@@ -4,35 +4,58 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
 		<title>Agri VR</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Sharp" rel="stylesheet">
 		<link rel="stylesheet" href="style/theme.css" />
 	</head>
 	<body>
-		<div id="instructions" class="part body-medium">
-			<div class='display-medium'>Agri VR</div>
-			<div class='headline-small'>Esperienze in realtà virtuale per istituti tecnici agrari</div>
+		<div id="instructions" class="part">
+			<div class="header">
+				<div class='display-medium'>Agri VR</div>
+				<div class='headline-small'>Esperienze in realtà virtuale per istituti tecnici agrari</div>
+			</div>
+
 			<div class='cardlist'>
 				<div id='topo' class='card'>
 					<div class='display-small'>Topografia</div>
-					<div>Dopo aver eseguito un rilievo topografico, carica il file del modello digitale del terreno per visualizzarlo in VR:</div>
+					<div class="body-medium">Dopo aver eseguito un rilievo topografico, carica il file del modello digitale del terreno per visualizzarlo in VR:</div>
+					
+					<md-filled-button onclick="document.getElementById('dem_file').click()">
+						<md-icon slot="icon">upload</md-icon>
+						Carica rilievo
+					</md-filled-button>
+					
 					<input type="file" id="dem_file" accept=".tif"/>
-					<div>Dopo aver eseguito una foto aerea dell'area tramite drone, carica la foto:</div>			
+					<div class="body-medium">Dopo aver eseguito una foto aerea dell'area tramite drone, carica la foto:</div>			
+					
+					<md-filled-button onclick="document.getElementById('orto_file').click()">
+						<md-icon slot="icon">upload</md-icon>
+						Carica foto
+					</md-filled-button>
+					
 					<input type="file" id="orto_file"/>
 				</div>
 		
 				<div id='genio' class='card'>
 					<div class='display-small'>Genio rurale</div>
-					<div>Dopo aver realizzato il progetto tridimensionale della stalla, caricalo per poterlo piazzare sul terreno</div>			
+					<div class="body-medium">Dopo aver realizzato il progetto tridimensionale della stalla, caricalo per poterlo piazzare sul terreno</div>			
+					
+					<md-filled-button onclick="document.getElementById('genio_file').click()">
+						<md-icon slot="icon">upload</md-icon>
+						Carica modello
+					</md-filled-button>
 					<input type="file" id="genio_file" accept=".glb"/>
 				</div>
 		
 				<div id='pv' class='card'>
 					<div class='display-small'>Produzioni vegetali</div>
-					<div>Simula la potatura degli alberi da frutto nell'azienda agricola che hai costruito nelle precedenti attività</div>
+					<div class="body-medium">Simula la potatura degli alberi da frutto nell'azienda agricola che hai costruito nelle precedenti attività</div>
+					<div class="body-medium errore">Non ancora disponibile</div>
 				</div>
 		
 				<div id='pa' class='card'>
 					<div class='display-small'>Produzioni animali</div>
-					<div>Simula interventi veterinari nell'azienda agricola che hai costruito nelle precedenti attività</div>
+					<div class="body-medium">Simula interventi veterinari nell'azienda agricola che hai costruito nelle precedenti attività</div>
+					<div class="body-medium errore">Non ancora disponibile</div>
 				</div>
 			</div>
 			

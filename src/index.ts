@@ -4,6 +4,9 @@ import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { ExtendedController } from './ExtendedController';
+import '@material/web/icon/icon.js';
+import '@material/web/button/filled-button.js';
+
 
 // Create the scene
 const scene = new THREE.Scene();
