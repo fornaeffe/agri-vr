@@ -122,7 +122,8 @@ scene.add( light );
 
 // Create the camera
 const camera = new THREE.PerspectiveCamera( 75, 1, 0.1, 10000 );
-camera.position.set(0, 0, 2)
+camera.position.set(50, 50, 50)
+camera.lookAt(0,0,0)
 
 function resize() {	
     let width = 100
