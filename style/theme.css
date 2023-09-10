@@ -4,6 +4,10 @@
 @import url(theme.light.css) (prefers-color-scheme: light);
 @import url(theme.dark.css) (prefers-color-scheme: dark);
 
+h1, h2 {
+    margin: 0px
+}
+
 :root {
     --md-icon-font: 'Material Symbols Sharp';
 }
@@ -24,6 +28,10 @@ body {
     padding: 8px;
 }
 
+#viewer {
+    height: 100vh;
+}
+
 .header {
     padding: 16px;
 }
@@ -41,6 +49,8 @@ body {
     padding: 16px;
     color: var(--md-sys-color-on-surface);
 }
+
+
 
 .body-medium {
     margin: 16px 0 8px 0;
