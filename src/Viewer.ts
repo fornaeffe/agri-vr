@@ -1,10 +1,8 @@
-
 import { fromBlob } from 'geotiff'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { ExtendedController } from './ExtendedController';
-import { mode } from '../webpack.config';
 
 export class Viewer {
     renderer: THREE.WebGLRenderer
@@ -244,11 +242,13 @@ export class Viewer {
         
         loader.load( url, ( gltf ) => {
 
-            // Following two lines are just a workaround needed by a specific model,
+            // Following four lines are just a workaround needed by a specific model,
             // should be removed after 12 sep 2023
             // but maybe model created with Archicad may also need a rotation
-            gltf.scene.rotateX(- Math.PI / 2)
-            gltf.scene.translateY(-100)
+            gltf.scene.rotateX(- Math.PI / 2)            
+            gltf.scene.rotateZ(-1.05)
+            gltf.scene.translateY(-120)
+            gltf.scene.translateX(-15)
             
 
             this.modelGroup.add( gltf.scene );
